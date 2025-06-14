@@ -1,0 +1,30 @@
+:root {
+  --primary: #a88b6a;
+  --primary-dark: #8b7358;
+  --accent: #4c665d;
+  --light-cream: #fdfaf6;
+  --text-dark: #333;
+  --soft-gray: #e6e6e6;
+  --white: #ffffff;
+  --header-color: #3e4e50;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--light-cream);
+  color: var(--text-dark);
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+button {
+  font-family: inherit;
+}

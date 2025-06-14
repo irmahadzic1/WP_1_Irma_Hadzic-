@@ -1,0 +1,41 @@
+
+<div class="categories-grid" *ngIf="!selectedCategory && !selectedProduct">
+  <div
+    class="category-card"
+    *ngFor="let category of categories"
+    (click)="selectCategory(category.name)"
+  >
+    <img [src]="'assets/images/' + category.image" [alt]="category.name" />
+    <h3>{{ category.name }}</h3>
+  </div>
+</div>
+
+
+<div *ngIf="selectedCategory && !selectedProduct">
+  <button class="back-button" (click)="clearCategory()">← Nazad na kategorije</button>
+
+  <h2>{{ selectedCategory }}</h2>
+
+  <div class="products-grid">
+    <div
+      class="product-card"
+      *ngFor="let product of products[selectedCategory]"
+      (click)="selectProduct(product)"
+    >
+      <img [src]="'assets/images/' + product.image" [alt]="product.name" />
+      <h4>{{ product.name }}</h4>
+      <p>{{ product.price }}</p>
+    </div>
+  </div>
+</div>
+
+
+<div *ngIf="selectedProduct">
+  <button class="back-button" (click)="clearProduct()">← Nazad na proizvode</button>
+
+  <div class="single-product">
+    <img [src]="'assets/images/' + selectedProduct.image" [alt]="selectedProduct.name" />
+    <h2>{{ selectedProduct.name }}</h2>
+    <p class="price">{{ selectedProduct.price }}</p>
+  </div>
+</div>
